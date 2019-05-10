@@ -6,7 +6,7 @@ attach it to a Raspberry Pi using a USB-COM-Adapter and then installing the ser2
 
 Then install the module using this command:
 
-update all https://raw.githubusercontent.com/sw-home/FHEM-Tesla/master/controls_pip.txt
+update all https://raw.githubusercontent.com/sw-home/FHEM-PIP/master/controls_pip.txt
 
 and define a module like this:
 
