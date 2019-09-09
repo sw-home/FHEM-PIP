@@ -219,7 +219,7 @@ MppSolarPip_Update($)
 
         if ($res and ord($res) == 0x28 and
                  ord(substr($res, length($res)-1)) == 13 and
-                 scalar (@vals = split(/ +/, substr($res,1,length($res)-4))) == 25)
+                 scalar (@vals = split(/ +/, substr($res,1,length($res)-4))) >= 23)
         {
           foreach my $key (keys %MppSolarPip_InverterModes) {
             if (index($MppSolarPip_InverterModes{$key}, "0".$vals[16]) > -1) {
@@ -248,12 +248,12 @@ MppSolarPip_Update($)
 
       if ($res and ord($res) == 0x28 and
                ord(substr($res, length($res)-1)) == 13 and
-               scalar (@vals = split(/ +/, substr($res,1,length($res)-4))) == 21)
+               scalar (@vals = split(/ +/, substr($res,1,length($res)-4))) >= 17)
       {
         my @vals = split(/ +/, substr($res,1,length($res)-4));
 
         # parse the result from inverter to dedicated values
-        for my $i (0..20)
+        for my $i (0..MppSolarPip_max(scalar (@vals)-1,20))
         {
           if (defined($vals[$i]))
           {
@@ -454,6 +454,8 @@ MppSolarPip_Undef($$)
 }
 
 1;
+
+sub MppSolarPip_max ($$) { $_[$_[0] < $_[1]] }
 
 sub MppSolarPip_hexdump($)
 {
