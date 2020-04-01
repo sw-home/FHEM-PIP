@@ -1,7 +1,7 @@
 # FHEM-PIP
-FHEM Module to integrate the MPP Solar / Axpert PIP Hybrid Solar Inverters
+FHEM Modules to integrate the MPP Solar / Axpert PIP Hybrid Solar Inverters and Solar Chargers
 
-The PIP needs to be accessible over a network TCP connection. Easiest way to accomplish this would be to
+The PIP/PCM needs to be accessible over a network TCP connection. Easiest way to accomplish this would be to
 attach it to a Raspberry Pi using a USB-COM-Adapter and then installing the ser2net daemon.
 
 Then install the module using this command:
@@ -29,3 +29,8 @@ attr PIP event-min-interval batteryChargeAmps:600,batteryDischargeAmps:600,batte
 
 attr PIP event-on-change-reading batteryChargeAmps,batteryDischargeAmps,batterySoC,batteryVoltage,opMode,outputLoad,outputPower,outputVA,pvPower,solarEnergyDay
 ```
+
+To use the MPP Solar PCM60X MPPT charger define it like this:
+
+define PCM60X MppSolarPCM IP_address port refresh_interval_in_seconds timeout_in_seconds
+
