@@ -23,7 +23,7 @@
 #
 # Copyright notice
 #
-# (c) 2018 Stefan Willmeroth <swi@willmeroth.com>
+# (c) 2020 Stefan Willmeroth <swi@willmeroth.com>
 #
 # This script is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -55,10 +55,10 @@ my @MppSolarPCM_gets = (
             'batteryVoltage',               # V
             'batteryChargeAmps',            # A
             'externalBatteryVoltage',       # V
-            'unknown1',
+            'pvCurrentAmps',                # A
             'pvPower',                      # W
             'heatsinkTemp',                 # C
-            'unknown2',
+            'unknown1',
             'batteryTemp',                  # C
             'nextEqualisation',             # days
             'deviceStatus',                 # bits unknown
